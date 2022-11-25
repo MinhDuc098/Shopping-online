@@ -1,0 +1,61 @@
+﻿@addTagHelper *,Microsoft.AspNetCore.Mvc.TagHelpers
+@using ProjectPrn211.Models
+@model Product
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        button:hover{
+            opacity: 0.5;
+            cursor: pointer;
+        }
+    </style>
+    <div style="text-align: center">
+        <h1 style="text-align:center; font-size: 50px"> Product Detail </h1>
+
+        <div style="margin-bottom: 40px;">
+            <a asp-controller="Home" asp-action="Index">
+                <button style="padding: 20px;text-decoration: none; background: greenyellow; font-size:20px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19); border:none">
+                    back to home
+                </button>
+            </a>
+        </div>
+
+        <div style="align-content: center; display:inline-block; ">
+            <img style=" height: 80%;width: 80%; padding: 0px; position: relative;" src="@Model.Image" alt="@Model.Image" />
+        </div>
+
+        <div style="display:inline-block;text-align:center; background-color:  rgba(193, 189, 189, 0.388); padding: 10px;">
+
+            <p style="font-size: 40px; color:black;font-weight: bold;">VND: @Model.UnitPrice </p>
+
+            <p style="font-size: 20px; font-weight: bold">   @Model.ProductName </p>
+
+
+            <p style="font-size: 35px;font-weight: bold;">Unit In Stoke: @Model.UnitInStoke </p>
+            <div>
+                @if (Model.UnitInStoke == 0)
+                {
+                    <h3 style="text-align: center; margin-top: 30px; color:black">
+                        SOLD OUT
+                    </h3>
+                }
+                else
+                {
+                    <a asp-route-id="@Model.ProductId" asp-controller="Home" asp-action="AddCart"> <button style="text-decoration: none; background: red; font-size:20px;margin: 10px auto;padding: 10px; border:none"> Add to Cart </button> </a>
+
+                }
+            </div>
+        </div>
+       
+    </div>
+
+</body>
+</html>
+

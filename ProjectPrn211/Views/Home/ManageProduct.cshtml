@@ -1,0 +1,63 @@
+﻿@addTagHelper *,Microsoft.AspNetCore.Mvc.TagHelpers
+@using ProjectPrn211.Models
+@model List<Product>
+
+<style>
+    button:hover {
+        opacity: 0.5;
+        background: gray;
+        cursor: pointer;
+    }
+
+    button{
+        padding: 10px;
+        border: none;
+        background: darkred;
+        color: white;
+        font-size: 26px;
+        margin: auto 10px;
+    }
+</style>
+
+<h1 style="text-align:center; font-size: 40px"> Managemant Product </h1>
+
+@if (@ViewBag.notice != null)
+{
+    <h3> @ViewBag.notice </h3>
+}
+
+
+<a asp-controller="Home" asp-action="Add" > <button style="margin-bottom: 40px;"> Add New Product </button> </a>
+
+<a asp-controller="Home" asp-action="Index" > <button style="margin-bottom: 40px;"> Back to Home </button> </a>
+<table border="1">
+    <tr> 
+        <td> Id </td>
+        <td> Product Name </td>
+        <td> Price </td>
+        <td> Unit In Stoke </td>
+        <td> Category </td>
+        <td> Image </td>
+        <td></td>
+        <td></td>
+    </tr>
+    @foreach (Product item in Model)
+    {
+        <tr>
+            <td> @item.ProductId </td>
+            <td> @item.ProductName </td>
+            <td> @item.UnitPrice </td>
+            <td> @item.UnitInStoke </td>
+            @if(item.Category != null){
+            <td> @item.Category.CategoryName </td>
+
+            }
+            else{
+                <td></td>
+            }
+            <td> <img style="width: 58%; height: 50%" src="@item.Image" /> </td>
+            <td> <a asp-controller="Home" asp-action="UpdateProduct" asp-route-id="@item.ProductId"> <button style="background-color: greenyellow"> Update </button> </a> </td>
+            <td> <a asp-controller="Home" asp-action="DeleteProduct" asp-route-id="@item.ProductId"> <button> Delete </button> </a> </td>
+        </tr>
+    }
+</table>

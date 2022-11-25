@@ -1,0 +1,103 @@
+﻿@addTagHelper *,Microsoft.AspNetCore.Mvc.TagHelpers
+@using ProjectPrn211.Models
+@model List<OrderLine>
+
+
+<style>
+    button:hover {
+        opacity: 0.5;
+        background: gray;
+        cursor: pointer;
+    }
+
+    .category {
+        text-decoration: none;
+        color: black;
+    }
+
+        .category:hover {
+            opacity: 0.6;
+        }
+</style>
+<div>
+
+
+    <h2> Your Order </h2>
+    
+    
+    <table border="1">
+        <tr>
+            <td> Product name </td>
+            <td> product price </td>
+            <td> quantity </td>
+            <td> Image </td>
+            <td> status </td>
+            <td> Remove </td>
+
+        </tr>
+       
+        @foreach (OrderLine @item in Model)
+        {
+            <tr>
+                @if(item.Product!=null){
+                     <td> @item.Product.ProductName </td>
+                
+                
+                    var price = @item.Product.UnitPrice * item.Quantity;
+                
+
+                    <td> @price </td>
+                    <td> @item.Quantity  </td>
+                    <td> <img src="@item.Product.Image" style="width: 20%; height: 20%" />  </td>
+                }
+                else{
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                }
+                    <td> @ViewBag.status     </td>
+                
+               
+                @if (@ViewBag.status == "packing")
+                {
+                <td>
+                    <a asp-controller="Home"  asp-route-id="@item.OrderLineId" asp-route-email="@ViewBag.email" asp-route-phone="@ViewBag.phone" >
+                        <button onclick="request()" style="text-decoration: none; background: red; font-size:20px;margin: 10px auto;border: none">
+                            Cannel Request
+                        </button>
+                    </a>
+                </td>
+
+                }
+                else{
+                    <td>  </td>
+                }
+            </tr>
+        }
+        <input id="hid" hidden />
+        
+
+    </table>
+  
+
+    <a asp-controller="Home" asp-action="Index">
+        <button style="text-decoration: none; background: greenyellow; font-size:20px;margin: 10px auto">
+            back to home
+        </button>
+    </a>
+
+    <script> 
+        function request(){
+            var reason =  window.prompt("Why do you want to cannel this order")
+            if(reason.trim() != ""){
+                window.alert("your request have been send to admin to handle")
+
+            }
+            document.getElementById("hid").value  = reason;
+        }
+    </script>
+
+
+
+</div>

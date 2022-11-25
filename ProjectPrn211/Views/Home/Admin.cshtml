@@ -1,0 +1,46 @@
+﻿@addTagHelper *,Microsoft.AspNetCore.Mvc.TagHelpers
+@using ProjectPrn211.Models
+
+<style>
+    div {
+        display: flexbox;
+        justify-content: center;
+        align-content: center;
+    }
+
+    button:hover {
+        opacity: 0.5;
+    }
+
+    button {
+        padding: 10px;
+        border: none;
+    }
+
+    form {
+        text-align: center
+        
+        font-size: 20px;
+    }
+
+    input {
+        font-size: 23px;
+        padding: 5px;
+    }
+</style>
+
+<div>
+    <h1> Admin Manage </h1>
+
+    @if(ViewBag.mess!=null){
+        <h3 style="color:red"> @ViewBag.mess  </h3>
+    }
+    
+    <form asp-action="Admin" asp-controller="Home" method="post">
+        UserName: <input name="username" required />
+        <br />
+        Password: <input name="password" required />
+        <br />
+        <button type="submit"> Submit </button>
+    </form>
+</div>

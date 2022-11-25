@@ -1,0 +1,35 @@
+﻿@addTagHelper *,Microsoft.AspNetCore.Mvc.TagHelpers
+@using ProjectPrn211.Models
+@model Account
+
+<h1> Enter Your Information </h1>
+
+
+
+<form asp-action="PlaceOrder" method="post" asp-controller="Home">
+    Enter your First Name: <input asp-for="UserName" id="name" required />
+    <br />
+    Enter Your Last Name: <input asp-for="Password" id="pass" required />
+    <br />
+    Enter Your Email: <input type="email" asp-for="Email" id="email" required  />
+    <br />
+    Enter Your Address: <input asp-for="Address" id="address" required />
+    <br />
+    Enter Your PhoneNumber: <input asp-for="PhoneNumber" id="phone" required />
+    <br />
+    <input type="submit" value="submit" onclick="confirm()" />
+</form>
+
+<script>
+    function confirm(){
+        if(document.getElementById("name").value == "" || document.getElementById("pass").value == ""
+            || document.getElementById("email").value == "" || document.getElementById("address").value == ""
+            || document.getElementById("phone").value == "") {
+            window.alert("you have to fullfill all text")
+        }
+        else{
+         window.alert("place order successfull")
+        }
+       
+    }
+</script>

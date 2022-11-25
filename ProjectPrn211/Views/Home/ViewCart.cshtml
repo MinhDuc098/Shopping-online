@@ -1,0 +1,87 @@
+﻿
+@addTagHelper *,Microsoft.AspNetCore.Mvc.TagHelpers
+@using ProjectPrn211.Models
+@model List<Product>
+
+<style>
+    button:hover {
+        opacity: 0.5;
+        background: gray;
+        cursor: pointer;
+    }
+
+    .category {
+        text-decoration: none;
+        color: black;
+    }
+
+        .category:hover {
+            opacity: 0.6;
+        }
+</style>
+<div>
+
+
+    <h2> Your Cart </h2>
+    <table border="1">
+        <tr>
+            <td> Product name </td>
+            <td> product price </td>
+            <td> quantity </td>
+            <td> Image </td>
+            <td> Remove </td>
+
+        </tr>
+        @{
+            double total = 0.0;
+        }
+        @foreach (OrderLine @item in ViewBag.lorder)
+        {
+            <tr>
+                <td> @Model.FirstOrDefault(product => product.ProductId == item.ProductId).ProductName </td>
+                @{
+
+                    var Price = @Model.FirstOrDefault(product => product.ProductId == item.ProductId).UnitPrice * @item.Quantity;
+                    total += Convert.ToDouble(Price);
+                }
+                <td> @Price </td>
+                <td> @item.Quantity </td>
+                 @{ string img = @Model.FirstOrDefault(product => product.ProductId == item.ProductId).Image; }
+                <td> <img src="@img" style="width: 20%; height: 20%" /> </td>
+                <td>
+                    <a asp-route-id="@item.ProductId" asp-controller="Home" asp-action="RemoveOrderLine">
+                        <button style="text-decoration: none; background: red; font-size:20px;margin: 10px auto;border: none">
+                            Remove
+                        </button>
+                    </a>
+                </td>
+
+            </tr>
+        }
+        <tr>
+            <td> Total </td>
+            <td></td>
+            <td></td>
+            <td> @total </td>
+        </tr>
+
+    </table>
+    <a asp-controller="Home" asp-action="PlaceOrder">
+        <button style="text-decoration: none; background: red; font-size:20px;margin: 10px auto">
+            Place Order
+        </button>
+        
+
+    </a>
+
+    <a asp-controller="Home" asp-action="Index">
+        <button style="text-decoration: none; background: greenyellow; font-size:20px;margin: 10px auto">
+            back to home
+        </button>
+    </a>
+
+    
+
+
+
+</div>

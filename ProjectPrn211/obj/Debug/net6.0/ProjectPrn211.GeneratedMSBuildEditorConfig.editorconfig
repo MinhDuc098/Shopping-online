@@ -1,0 +1,56 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = ProjectPrn211
+build_property.RootNamespace = ProjectPrn211
+build_property.ProjectDir = E:\STUDY_SE_FIFTH_TERM\PRN211\ProjectPrn211\Shopping-online\ProjectPrn211\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = E:\STUDY_SE_FIFTH_TERM\PRN211\ProjectPrn211\Shopping-online\ProjectPrn211
+build_property._RazorSourceGeneratorDebug = 
+
+[E:/STUDY_SE_FIFTH_TERM/PRN211/ProjectPrn211/Shopping-online/ProjectPrn211/Views/Home/AddProduct.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBZGRQcm9kdWN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/STUDY_SE_FIFTH_TERM/PRN211/ProjectPrn211/Shopping-online/ProjectPrn211/Views/Home/Admin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBZG1pbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/STUDY_SE_FIFTH_TERM/PRN211/ProjectPrn211/Shopping-online/ProjectPrn211/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/STUDY_SE_FIFTH_TERM/PRN211/ProjectPrn211/Shopping-online/ProjectPrn211/Views/Home/login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxsb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/STUDY_SE_FIFTH_TERM/PRN211/ProjectPrn211/Shopping-online/ProjectPrn211/Views/Home/ManageProduct.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxNYW5hZ2VQcm9kdWN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/STUDY_SE_FIFTH_TERM/PRN211/ProjectPrn211/Shopping-online/ProjectPrn211/Views/Home/PlaceOrder.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQbGFjZU9yZGVyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/STUDY_SE_FIFTH_TERM/PRN211/ProjectPrn211/Shopping-online/ProjectPrn211/Views/Home/UpdateProduct.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxVcGRhdGVQcm9kdWN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/STUDY_SE_FIFTH_TERM/PRN211/ProjectPrn211/Shopping-online/ProjectPrn211/Views/Home/ViewCart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxWaWV3Q2FydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/STUDY_SE_FIFTH_TERM/PRN211/ProjectPrn211/Shopping-online/ProjectPrn211/Views/Home/ViewDetail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxWaWV3RGV0YWlsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/STUDY_SE_FIFTH_TERM/PRN211/ProjectPrn211/Shopping-online/ProjectPrn211/Views/Home/ViewOrder.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxWaWV3T3JkZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 

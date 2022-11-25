@@ -1,0 +1,63 @@
+﻿@addTagHelper *,Microsoft.AspNetCore.Mvc.TagHelpers
+@using ProjectPrn211.Models
+@model Product
+
+<style>
+    button {
+        background-color: deepskyblue;
+        border: none;
+        padding: 10px;
+        margin-top: 15px;
+    }
+
+        button:hover {
+            opacity: 0.5;
+            cursor: pointer;
+        }
+
+    input {
+        font-size: 20px;
+        padding: 8px;
+    }
+</style>
+
+<div style="display:flex;justify-content:center">
+
+
+    <form asp-action="UpdateProduct" asp-controller="Home" method="post">
+        <h1> Update PRODUCT </h1>
+        <table>
+            <input asp-for="ProductId" value="@Model.ProductId" hidden />
+            <tr> <td> Product Name:</td> <td> <input asp-for="ProductName" required value="@Model.ProductName" /> </td></tr>
+            <tr> <td>         Unit Price :</td> <td> <input asp-for="UnitPrice" required value="@Model.UnitPrice" /></td></tr>
+            <tr> <td> Unit In Stoke: </td> <td>   <input asp-for="UnitInStoke" value="@Model.UnitInStoke" required /></td> </tr>
+            <tr> <td> Image:</td>  <td>  <input asp-for="Image" value="@Model.Image" /></td> </tr>
+            <tr>
+                <td> Category: </td>
+                <td>
+                    <select asp-for="CategoryId">
+                        @foreach (Category item in ViewBag.selectCate)
+                        {
+                            @if(item.CategoryId == Model.CategoryId){
+                                <option value="@item.CategoryId" selected> @item.CategoryName </option>
+
+                            }
+                            else{
+                            <option value="@item.CategoryId"> @item.CategoryName </option>
+
+                            }
+                        }
+                    </select>
+                </td>
+            </tr>
+            <tr> <button type="submit"> Update </button></tr>
+
+        </table>
+    </form>
+
+</div>
+<form asp-controller="Home" asp-action="Admin" method="post" style="text-align:center">
+    <input name="username" value="admin" hidden />
+    <input name="password" value="admin" hidden />
+    <button type="submit"> Cannel </button>
+</form>
